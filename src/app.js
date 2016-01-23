@@ -8,9 +8,9 @@ var UI = require('ui');
 var Vector2 = require('vector2');
 
 var main = new UI.Card({
-  title: 'Pebble + Houndify',
+  title: 'Pebble + Houndify\n\n',
   icon: 'images/menu_icon.png',
-  body: 'Start Talking./n',
+  body: 'Start Talking.',
   subtitleColor: 'red', // Named colors
   bodyColor: 'black' // Hex colors
 });
