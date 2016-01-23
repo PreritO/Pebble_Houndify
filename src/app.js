@@ -5,7 +5,8 @@
  */
 
 var UI = require('ui');
-var Vector2 = require('vector2');
+var Voice = require('ui/voice');
+//var Vector2 = require('vector2');
 
 var main = new UI.Card({
   title: 'Pebble + Houndify\n\n',
@@ -17,6 +18,16 @@ var main = new UI.Card({
 
 main.show();
 
+// Start a diction session and skip confirmation
+Voice.dictate('start', false, function(e) {
+  if (e.err) {
+    console.log('Error: ' + e.err);
+    return;
+  }
+  main.subtitle('Success: ' + e.transcription);
+});
+
+/*
 main.on('click', 'up', function(e) {
   var menu = new UI.Menu({
     sections: [{
@@ -59,3 +70,4 @@ main.on('click', 'down', function(e) {
   card.body('The simplest window type in Pebble.js.');
   card.show();
 });
+*/
